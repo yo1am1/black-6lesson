@@ -1,7 +1,7 @@
-import sqlite3
 import random
-from faker import Faker
+import sqlite3
 
+from faker import Faker
 
 
 def create():
@@ -29,7 +29,7 @@ def create():
                       len_in_sec INTEGER)''')
 
         for i in range(random.randint(100, 250)):
-            title = fake.text(40)
+            title = fake.text(random.randint(10, 50))
             artist = fake.name()
             len_in_sec = fake.random_int(min=90, max=240)
             c.execute(
