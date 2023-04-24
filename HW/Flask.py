@@ -39,7 +39,7 @@ def track_lengths():
     data_create.create()
     con = sqlite3.connect('music.db')
     c = con.cursor()
-    results = c.execute("SELECT title, len_in_sec FROM tracks").fetchall()
+    results = c.execute("SELECT (id+1), title, len_in_sec FROM tracks").fetchall()
     con.close()
     return flask.render_template("task3.html", track_sec=results)
 
